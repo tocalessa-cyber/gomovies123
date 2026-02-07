@@ -15,8 +15,6 @@ import {
 import MovieList from '../../../components/MovieList';
 import TvSeriesList from '../../../components/TvSeriesList';
 
-export const runtime = 'edge';
-
 const CATEGORIES = ['now_playing', 'popular', 'top_rated', 'upcoming'];
 
 // Utility function to create a slug from a movie title
@@ -41,8 +39,8 @@ export async function generateMetadata({ params }) {
   if (CATEGORIES.includes(slug)) {
     const title = slug.replace(/_/g, ' ').toUpperCase();
     return {
-      title: `Gomovies123 - ${title} Movies`,
-      description: `Explore the ${title} movies collection on Gomovies123.`,
+      title: `Gomovies - ${title} Movies`,
+      description: `Explore the ${title} movies collection on Gomovies.`,
     };
   }
 
@@ -53,8 +51,8 @@ export async function generateMetadata({ params }) {
     const genres = await getMovieGenres();
     const genreName = genres.find(g => g.id == genreId)?.name || 'Unknown';
     return {
-      title: `Gomovies123 - ${genreName} Movies`,
-      description: `Discover ${genreName} movies on Gomovies123.`,
+      title: `Gomovies - ${genreName} Movies`,
+      description: `Discover ${genreName} movies on Gomovies.`,
     };
   }
 
@@ -85,7 +83,7 @@ export async function generateMetadata({ params }) {
   // Jika data tidak ditemukan, kembalikan metadata dasar
   if (!movieData) {
     return {
-      title: 'Gomovies123',
+      title: 'Gomovies',
       description: 'Watch Movie Stream Movies and Tv Series Free.',
     };
   }
@@ -101,13 +99,13 @@ export async function generateMetadata({ params }) {
   const socialImageAlt = `${movieData.title} poster`;
 
   return {
-    title: `Gomovies123 - ${movieData.title}`,
+    title: `Gomovies - ${movieData.title}`,
     description: movieData.overview || `Detailed information for movie ${movieData.title}`,
     openGraph: {
       title: movieData.title,
       description: movieData.overview || `Detailed information for movie ${movieData.title}`,
-      url: `https://gomovies123.vercel.app/movie/${slug}`,
-      siteName: 'Gomovies123',
+      url: `https://gomovies-watch.vercel.app/movie/${slug}`,
+      siteName: 'Gomovies',
       images: [
         {
           url: socialImage,

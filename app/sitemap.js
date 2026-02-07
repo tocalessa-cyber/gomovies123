@@ -2,7 +2,7 @@
 const BASE_URL = 'https://gomovies123.vercel.app';
 
 export default async function sitemap() {
-  console.log('🎬 Generating dynamic sitemap for Gomovies123...');
+  console.log('🎬 Generating dynamic sitemap for Gomovies...');
   
   try {
     const [staticUrls, dynamicUrls] = await Promise.all([

@@ -7,8 +7,6 @@ import {
 import TvSeriesList from '../../../../components/TvSeriesList';
 import Link from 'next/link';
 
-export const runtime = 'edge';
-
 // Utility untuk membuat slug dari nama genre yang SEO-Friendly.
 const createGenreSlug = (name) => {
   if (!name) return '';
@@ -42,17 +40,17 @@ export async function generateMetadata({ params }) {
 
   const title = genre?.name || 'Unknown';
   
-  const pageUrl = `https://gomovies123.vercel.app/tv-show/genre/${genreName}`;
+  const pageUrl = `https://gomovies-watch.vercel.app/tv-show/genre/${genreName}`;
   const imageUrl = 'https://live.staticflickr.com/65535/54796879356_0cf11547b4_b.jpg';
 
   return {
-    title: `Gomovies123 - ${title} TV Series`,
-    description: `Find and watch the best ${title} TV series for free on Gomovies123.`,
+    title: `Gomovies - ${title} TV Series`,
+    description: `Find and watch the best ${title} TV series for free on Gomovies.`,
     openGraph: {
-      title: `Gomovies123 - ${title} TV Series`,
-      description: `Find and watch the best ${title} TV series for free on Gomovies123.`,
+      title: `Gomovies - ${title} TV Series`,
+      description: `Find and watch the best ${title} TV series for free on Gomovies.`,
       url: pageUrl,
-      siteName: 'Gomovies123',
+      siteName: 'Gomovies',
       images: [
         {
           url: imageUrl,
@@ -68,8 +66,8 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       site: '@WatchStream123',
       creator: '@WatchStream123',
-      title: `Gomovies123 - ${title} TV Series`,
-      description: `Find and watch the best ${title} TV series for free on Gomovies123.`,
+      title: `Gomovies - ${title} TV Series`,
+      description: `Find and watch the best ${title} TV series for free on Gomovies.`,
       images: [imageUrl],
     },
     other: {

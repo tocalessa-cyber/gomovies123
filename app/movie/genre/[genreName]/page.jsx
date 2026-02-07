@@ -4,8 +4,6 @@ import { notFound } from 'next/navigation';
 import { getMoviesByGenre, getMovieGenres } from '../../../../lib/api';
 import MovieList from '../../../../components/MovieList';
 
-export const runtime = 'edge';
-
 export async function generateMetadata({ params }) {
   // Await params sebelum mengakses propertinya
   const { genreName } = await params;
@@ -16,17 +14,17 @@ export async function generateMetadata({ params }) {
   const genre = genres.find(g => g.name.toLowerCase().replace(/\s/g, '-') === genreName);
   const title = genre?.name || 'Unknown';
 
-  const pageUrl = `https://gomovies123.vercel.app/movie/genre/${genreName}`;
+  const pageUrl = `https://gomovies-watch.vercel.app/movie/genre/${genreName}`;
   const imageUrl = 'https://live.staticflickr.com/65535/54796879356_0cf11547b4_b.jpg';
 
   return {
-    title: `Gomovies123 - ${title} Movies`,
-    description: `Find and watch the best ${title} movies for free on Gomovies123.`,
+    title: `Gomovies - ${title} Movies`,
+    description: `Find and watch the best ${title} movies for free on Gomovies.`,
     openGraph: {
-      title: `Gomovies123 - ${title} Movies`,
-      description: `Find and watch the best ${title} movies for free on Gomovies123.`,
+      title: `Gomovies - ${title} Movies`,
+      description: `Find and watch the best ${title} movies for free on Gomovies.`,
       url: pageUrl,
-      siteName: 'Gomovies123',
+      siteName: 'Gomovies',
       images: [
         {
           url: imageUrl,
@@ -42,8 +40,8 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       site: '@WatchStream123',
       creator: '@WatchStream123',
-      title: `Gomovies123 - ${title} Movies`,
-      description: `Find and watch the best ${title} movies for free on Gomovies123.`,
+      title: `Gomovies - ${title} Movies`,
+      description: `Find and watch the best ${title} movies for free on Gomovies.`,
       images: [imageUrl],
     },
     other: {

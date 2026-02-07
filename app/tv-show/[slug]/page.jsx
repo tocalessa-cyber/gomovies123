@@ -16,8 +16,6 @@ import {
 } from '../../../lib/api';
 import TvSeriesList from '../../../components/TvSeriesList';
 
-export const runtime = 'edge';
-
 const CATEGORIES = ['popular', 'top_rated', 'on_the_air', 'airing_today'];
 
 // --- HELPER FUNCTIONS ---
@@ -56,12 +54,12 @@ export async function generateMetadata({ params }) {
 
   if (genreSlugMap.has(processedSlug)) {
     const genre = genreSlugMap.get(processedSlug);
-    return { title: `Gomovies123 - ${genre.name} TV Series` };
+    return { title: `Gomovies - ${genre.name} TV Series` };
   }
 
   if (CATEGORIES.includes(slug)) {
     const title = slug.replace(/_/g, ' ').toUpperCase();
-    return { title: `Gomovies123 - ${title} TV Series` };
+    return { title: `Gomovies - ${title} TV Series` };
   }
 
   // Logika untuk mengambil data TV show untuk metadata detail
@@ -100,13 +98,13 @@ export async function generateMetadata({ params }) {
   const socialImageAlt = `${tvShowData.name} poster`;
 
   return {
-    title: `Gomovies123 - ${tvShowData.name}`,
+    title: `Gomovies - ${tvShowData.name}`,
     description: tvShowData.overview,
     openGraph: {
       title: tvShowData.name,
       description: tvShowData.overview,
-      url: `https://gomovies123.vercel.app/tv-show/${slug}`,
-      siteName: 'Gomovies123',
+      url: `https://gomovies-watch.vercel.app/tv-show/${slug}`,
+      siteName: 'Gomovies',
       images: [{ url: socialImage, width: 1200, height: 630, alt: socialImageAlt }],
       locale: 'en_US',
       type: 'website',
