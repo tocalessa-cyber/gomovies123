@@ -6,19 +6,20 @@ import AdsterraLayoutWrapper from '../components/layout/AdsterraLayoutWrapper';
 import AdBanner from '../components/ads/AdBanner'; 
 
 export const metadata = {
-  title: 'Watch Movies Online Free | Stream TV Series HD - Gomovies',
-  description: 'Find where to watch movies & TV series online for free or on Netflix, Disney+, Prime Video. Gomovies tracks 10,000+ movies, 5,000+ shows, box office results, actor info, and provides HD streaming guides across all genres (action, horror, romance, anime, drakor).',
+  title: 'Watch Movies Online Free | Stream TV Series HD - GoMovies',
+  description: 'Find where to watch movies & TV series online for free or on Netflix, Disney+, Prime Video. GoMovies tracks 10,000+ movies, 5,000+ shows, box office results, actor info, and provides HD streaming guides across all genres (action, horror, romance, anime, drakor).',
+  keywords: 'watch movies, stream TV series, movie database, where to watch, streaming guide, Netflix, Disney+, Prime Video, free movies online, HD streaming, actor profiles, box office results',
   openGraph: {
-    title: 'Watch Movies Online Free | Stream TV Series HD - Gomovies',
+    title: 'Watch Movies Online Free | Stream TV Series HD - GoMovies',
     description: 'Find where to watch movies & TV series online for free or on Netflix, Disney+, Prime Video. Get streaming guides, actor profiles, and genre recommendations.',
     url: 'https://gomovies123.vercel.app',
-    siteName: 'Gomovies',
+    siteName: 'GoMovies',
     images: [
       {
         url: 'https://live.staticflickr.com/65535/54796879356_0cf11547b4_b.jpg',
         width: 1200,
         height: 630,
-        alt: 'Gomovies - Watch Movies Online Free and Stream TV Series',
+        alt: 'GoMovies - Watch Movies Online Free and Stream TV Series',
       },
     ],
     locale: 'en_US',
@@ -28,7 +29,7 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@WatchStream123',
     creator: '@WatchStream123',
-    title: 'Watch Movies Online Free | Stream TV Series HD - Gomovies',
+    title: 'Watch Movies Online Free | Stream TV Series HD - GoMovies',
     description: 'Find where to watch movies & TV series online for free or on Netflix, Disney+, Prime Video. Streaming guides and recommendations.',
     images: ['https://live.staticflickr.com/65535/54796879356_0cf11547b4_b.jpg'],
   },
@@ -47,6 +48,9 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <head>
         <meta name="google-site-verification" content="p3G8gbPM5atmqVkYXyzaATfRg6O6WsSLKI0GOk4mnfg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://gomovies123.vercel.app" />
+        
         {/* Structured Data untuk SEO */}
         <script
           type="application/ld+json"
@@ -54,7 +58,7 @@ export default async function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Gomovies",
+              "name": "GoMovies",
               "url": "https://gomovies123.vercel.app",
               "potentialAction": {
                 "@type": "SearchAction",
@@ -72,10 +76,14 @@ export default async function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Gomovies",
+              "name": "GoMovies",
               "url": "https://gomovies123.vercel.app",
               "logo": "https://live.staticflickr.com/65535/54796879356_0cf11547b4_b.jpg",
-              "description": "Streaming guide and movie database"
+              "description": "Streaming guide and movie database",
+              "sameAs": [
+                "https://twitter.com/WatchStream123",
+                "https://facebook.com/GoMovies"
+              ]
             })
           }}
         />
